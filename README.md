@@ -1,2 +1,2 @@
 # task_api
-API for todo app
+This api is used to build a todo app which is a vue app.
