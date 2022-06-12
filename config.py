@@ -1,7 +1,7 @@
 class Config(object):
     DEBUG = False
     TESTING = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///../databases/development.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///./databases/development.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
