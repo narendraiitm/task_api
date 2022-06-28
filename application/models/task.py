@@ -1,7 +1,5 @@
-from flask_sqlalchemy import SQLAlchemy
+from . import db
 import datetime
-
-db = SQLAlchemy()
 
 
 class Task(db.Model):
@@ -10,3 +8,5 @@ class Task(db.Model):
     status = db.Column(db.Boolean, default=False)
     description = db.Column(db.String)
     creation_date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),
+                        nullable=False)
