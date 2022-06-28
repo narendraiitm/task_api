@@ -15,7 +15,5 @@ fi
 
 # Activate virtual env
 source venv/bin/activate
-export FLASK_APP=main:dev_app
-export ENV=development
-flask run
+gunicorn -w 4 'main:prod_app'
 deactivate
