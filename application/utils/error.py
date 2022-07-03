@@ -4,9 +4,12 @@ from flask import jsonify, json
 
 def generic_error_handler(e):
     if isinstance(e, HTTPException):
-        return e
+        return http_exception_handler(e)
 
-    return jsonify(message="Internal Server Error"), 500
+    return jsonify({
+        'code': 500,
+        'name': 'Intrnal Server Error',
+        'description': 'Something went wrong on the server. looking into it'}), 500
 
 
 def http_exception_handler(e):
