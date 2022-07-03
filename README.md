@@ -22,3 +22,5 @@ This api is used to build a todo app which is a vue app.
 ## Run the application
 
 - source local_run.sh
+
+application will run on port 5000, visit 'http://localhost:5000/'

@@ -6,6 +6,7 @@ from werkzeug.exceptions import HTTPException
 from .utils.error import generic_error_handler, http_exception_handler
 from .utils.security import user_datastore, sec
 from .utils.stop_cookie import CustomSessionInterface
+from .utils.extra_endpoin_urls import all_url
 
 
 def create_app(config):
@@ -18,4 +19,5 @@ def create_app(config):
     sec.init_app(app, user_datastore)
     app.register_error_handler(Exception, generic_error_handler)
     app.register_error_handler(HTTPException, http_exception_handler)
+    app.add_url_rule('/', 'all_url', all_url)
     return app

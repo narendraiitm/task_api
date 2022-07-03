@@ -13,3 +13,6 @@ record.log
 
 # virtual env
 venv
+
+# prod_run
+prod_run.sh
