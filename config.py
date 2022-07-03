@@ -1,6 +1,6 @@
-import os
-from dotenv import load_dotenv
-load_dotenv()
+# import os
+# from dotenv import load_dotenv
+# load_dotenv()
 
 
 class Config(object):
@@ -15,9 +15,10 @@ class Config(object):
 
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.getenv("PROD_DB")
-    SECRET_KEY = os.getenv("SECRET_KEY")
-    SECURITY_PASSWORD_SALT = os.getenv("SECRET_SALT")
+#     SQLALCHEMY_DATABASE_URI = os.getenv("PROD_DB")
+#     SECRET_KEY = os.getenv("SECRET_KEY")
+#     SECURITY_PASSWORD_SALT = os.getenv("SECRET_SALT")
+    pass
 
 
 class DevelopmentConfig(Config):
