@@ -5,11 +5,13 @@ from flask_cors import CORS
 from werkzeug.exceptions import HTTPException
 from .utils.error import generic_error_handler, http_exception_handler
 from .utils.security import user_datastore, sec
+from .utils.stop_cookie import CustomSessionInterface
 
 
 def create_app(config):
     app = Flask(__name__)
     app.config.from_object(config)
+    app.session_interface = CustomSessionInterface()
     CORS(app)
     db.init_app(app)
     api.init_app(app)
