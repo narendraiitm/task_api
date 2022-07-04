@@ -7,6 +7,7 @@ from .utils.error import generic_error_handler, http_exception_handler
 from .utils.security import user_datastore, sec
 from .utils.stop_cookie import CustomSessionInterface
 from .utils.extra_endpoin_urls import all_url
+from .utils.extra_endpoin_urls import mark_task_as_complete
 
 
 def create_app(config):
@@ -20,4 +21,6 @@ def create_app(config):
     app.register_error_handler(Exception, generic_error_handler)
     app.register_error_handler(HTTPException, http_exception_handler)
     app.add_url_rule('/', 'all_url', all_url)
+    app.add_url_rule('/api/complete/<int:task_id>',
+                     'mark_task_as_complete', mark_task_as_complete)
     return app
